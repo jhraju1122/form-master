@@ -1,25 +1,24 @@
 import React from 'react';
 
-const SimpleForm = () => {
+const ReusableForm = ({formTitle, submitBtnText='Submit'}) => {
 
-const handleSubmit = e =>{
+ const handleSubmit = e =>{
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.email.value);
-    console.log(e.target.phone.value);
-    console.log('form submitted');
-}
+ }
+
+
 
     return (
         <div>
+            <h2>{formTitle}</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name='name' /> <br />
                 <input type="email" name='email' /> <br />
                 <input type="password" name='password' /> <br />
-                <button>submit</button>
+              <button>{submitBtnText}</button>
             </form>
         </div>
     );
 };
 
-export default SimpleForm;
+export default ReusableForm;
